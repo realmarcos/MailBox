@@ -300,47 +300,36 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Contatos</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Inbox</h1>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Cadastrar novo contato</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Principal</h6>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                            <div class="col-lg-2"></div>
-                            <div class="col-lg-7">
-                            <div class="p-5">
-                                <form class="user">
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Sobrenome">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Telefone">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="WhatsApp">
+                            
+                            <div class="table-responsive">
+                                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                    <thead>
+                                        <tr role="row">
+                                            <th width="10px">Selec</th>
+                                            <th width="100px">Remetente</th>
+                                            <th>Messagem do email......</th>
+                                        </tr>
+                                        
+                                    </thead>
+                                </table>
+                                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">                                   
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table table-bordered dataTable" id="dataTable" width="100%"
+                                                cellspacing="0" role="grid" aria-describedby="dataTable_info"
+                                                style="width: 100%;">                                              
+                                            </table>
                                         </div>
                                     </div>
-                                    <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                       Salvar
-                                    </a>
-                                    
-                                </form>
-                                <hr>
-                                
+                                </div>
                             </div>
-                            </div>
-                        </div>
                         </div>
                     </div>
                 </div>
