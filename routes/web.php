@@ -21,3 +21,13 @@ Route::get('/', function () {
 Route::get('/teste', function () {
     return view('teste');
 });
+Route::get('/cadastro', function () {
+    return view('cadastro');
+});
+Route::get('/contatos', function () {
+    return view('contatos');
+});
+Route::get('/cadastrocontato', function () {
+    return view('cadastrocontato');
+});
+
