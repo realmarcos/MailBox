@@ -33,29 +33,28 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Criar uma nova conta!</h1>
               </div>
-              <form class="user">
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Sobrenome">
-                  </div>
+
+              <!-- Validation Errors -->
+              <x-auth-validation-errors class="mb-4" :errors="$errors" />
+              <form method="POST" action="{{ route('register') }}" class="user">
+                @csrf
+                <div class="form-group">
+                  <input name="name" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
+                  <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
+                    <input name="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repitir senha">
+                    <input name="password_confirmation" type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Comfirmar senha">
                   </div>
                 </div>
-                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                <button class="btn btn-primary btn-user btn-block">
                   Registrar conta
-                </a>
+                </button>
                 <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Criar conta usando o Google
@@ -66,10 +65,10 @@
               </form>
               <hr>
               <div class="text-center">
-                <a class="small" href="forgot-password.html">Esqueceu a senha?</a>
+                <a class="small" href="{{ route('password.request') }}">Esqueceu a senha?</a>
               </div>
               <div class="text-center">
-                <a class="small" href="login.html">Você já possui uma conta? Entrar!</a>
+                <a class="small" href="{{ route('login') }}">Você já possui uma conta? Entrar!</a>
               </div>
             </div>
           </div>
@@ -82,7 +81,7 @@
 
   <!-- Bootstrap core JavaScript-->
   <script src="{{ asset('assets/sb-admin-2/vendor/jquery/jquery.min.js') }}"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('assets/sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
   <!-- Core plugin JavaScript-->
   <script src="{{ asset('assets/sb-admin-2/vendor/jquery-easing/jquery.easing.min.js') }}"></script>

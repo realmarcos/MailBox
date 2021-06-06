@@ -38,12 +38,17 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Bem Vindo(a)</h1>
                   </div>
-                  <form class="user">
+                  <!-- Session Status -->
+                  <x-auth-session-status class="mb-4" :status="session('status')" />
+                  <!-- Validation Errors -->
+                  <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                  <form method="POST" action="{{ route('login') }}" class="user">
+                    @csrf
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Seu endereço de Email...">
+                      <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Seu endereço de Email...">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Sua senha..">
+                      <input name="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Sua senha..">
                     </div>
                     <!-- <div class="form-group">
                       <div class="custom-control custom-checkbox small">
@@ -52,23 +57,24 @@
                           Me</label>
                       </div>
                     </div> -->
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                    <button class="btn btn-primary btn-user btn-block">
                       Entrar
-                    </a>
+                    </button>
+                    
                     <hr>
-                    <a href="index.html" class="btn btn-google btn-user btn-block">
+                    <a href="#" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Logar com uma conta Google
                     </a>
-                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                    <a href="#" class="btn btn-facebook btn-user btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Logar com uma conta Facebook
                     </a>
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Esqueceu a senha?</a>
+                    <a class="small" href="{{ route('password.request') }}">Esqueceu a senha?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.html">Criar uma nova conta!</a>
+                    <a class="small" href="{{ route('register') }}">Criar uma nova conta!</a>
                   </div>
                 </div>
               </div>
@@ -84,7 +90,7 @@
 
   <!-- Bootstrap core JavaScript-->
   <script src="{{ asset('assets/sb-admin-2/vendor/jquery/jquery.min.js') }}"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('assets/sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
   <!-- Core plugin JavaScript-->
   <script src="{{ asset('assets/sb-admin-2/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
