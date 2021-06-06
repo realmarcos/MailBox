@@ -8,7 +8,7 @@
   <meta name="description" content="Site desenvolvido como requisito para a disciplina de Linguagem e técnicas de programação III">
   <meta name="author" content="Marcos Raimundo">
 
-  <title>Inbox - MailBox</title>
+  <title>Enviados - MailBox</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{ asset('assets/sb-admin-2/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -247,7 +247,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Inbox</h1>
+          <h1 class="h3 mb-4 text-gray-800">Enviados</h1>
 
         </div>
         <!-- /.container-fluid -->
@@ -275,6 +275,7 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="{{ asset('assets/sb-admin-2/vendor/jquery/jquery.min.js') }}"></script>
