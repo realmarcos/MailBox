@@ -38,6 +38,15 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
+      <li class="nav-item">
+        <div class="nav-link">
+          <a href="#" class="btn btn-danger btn-block"> Escrever </a>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
       <!-- Nav Item - Inbox/Dashboard -->
       @if (Route::getCurrentRoute()->getName() === 'dashboard')
       <li class="nav-item active">
@@ -249,7 +258,34 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Enviados</h1>
 
+          <!-- Card caixa de saída -->
+          <div class="card shadow mb-4">
+            <div class="border-left-primary  card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary ">Caixa de saída</h6>
+            </div>
+            <div class="card-body">
+              <!-- tabela email -->
+              <div class="table-reponsive">
+              <table class="table table-bordered dataTable">
+                <thead>
+                  <tr role="row">
+                    <th width="20px">#</th>
+                    <th id="maxwidth">Destinatário</th>
+                    <th>Mensagem</th>
+                  </tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td id="maxwidth">Teste </td>
+                  <td>Está é uma mensagem teste</td>
+                </thead>
+
+              </table>
+              </div>
+            </div>
+          </div>
         </div>
+
         <!-- /.container-fluid -->
 
       </div>

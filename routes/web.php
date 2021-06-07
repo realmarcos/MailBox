@@ -17,6 +17,10 @@ Route::get('/teste', function () {
     return view('auth/login2');
 });
 
+Route::get('/', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

@@ -38,6 +38,15 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
+      <li class="nav-item">
+        <div class="nav-link">
+          <a href="#" class="btn btn-danger btn-block"> Escrever </a>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
       <!-- Nav Item - Inbox/Dashboard -->
       @if (Route::getCurrentRoute()->getName() === 'dashboard')
       <li class="nav-item active">
@@ -249,6 +258,52 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Contatos</h1>
 
+          <!-- Card lista de contatos -->
+          <div class="card shadow mb-4">
+            <div class="border-left-primary  card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary ">Lista de contatos</h6>
+            </div>
+
+            <div class="card-body">
+
+              <!-- bt criar contato -->
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <a href="#" class="btn btn-primary btn-icon-split">
+                    <span class="text">Criar contato</span>
+                  </a>
+                </div>
+              </div>
+              <br>
+              <!-- tabela email -->
+              <div class="table-reponsive">
+                <table class="table  ">
+                  <thead>
+                    <tr role="row">
+                      <th style="width: 15px; text-align: center;"> # </th>
+                      <th style="width: 15px; text-align: center;"> # </th>
+                      <th id="maxwidth">Nome</th>
+                      <th>Email</th>
+                  </thead>
+                  </tr>
+                  <td style="width: 15px; text-align: center;">
+                    <a href="#" class="btn btn-danger btn-circle btn-sm">
+                      <i class="fas fa-trash"></i>
+                    </a>
+                  </td>
+                  <td style="width: 15px; text-align: center;">
+                    <a href="#" class="btn btn-info btn-circle btn-sm">
+                      <i class="fas fa-user-edit"></i>
+                    </a>
+                  </td>
+                  <td id="maxwidth">Teste</td>
+                  <td>teste@gmail.com</td>
+
+
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- /.container-fluid -->
 
