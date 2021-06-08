@@ -256,36 +256,53 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Enviados</h1>
+          <h1 class="h3 mb-4 text-gray-800">Novo contato</h1>
 
-          <!-- Card caixa de saída -->
+          <!-- Card lista de contatos -->
           <div class="card shadow mb-4">
             <div class="border-left-primary  card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary ">Caixa de saída</h6>
+              <h6 class="m-0 font-weight-bold text-primary ">Cadastrar um novo contato</h6>
             </div>
-            <div class="card-body">
-              <!-- tabela email -->
-              <div class="table-reponsive">
-              <table class="table table-bordered dataTable">
-                <thead>
-                  <tr role="row">
-                    <th width="20px">#</th>
-                    <th id="maxwidth">Destinatário</th>
-                    <th>Mensagem</th>
-                  </tr>
-                  <td>
-                    <input type="checkbox">
-                  </td>
-                  <td id="maxwidth">Teste </td>
-                  <td>Está é uma mensagem teste</td>
-                </thead>
 
-              </table>
-              </div>
+            <div class="card-body border-0 my-5">
+
+           
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="p-7">
+                      <div class="text-center">
+                        <h4 class="h5 text-gray-900 mb-6">Preencha os campos abaixo</h4>
+                      </div>
+
+                      <!-- Validation Errors -->
+                      <form method="POST" action="#" class="user">
+                        @csrf
+                        <div class="form-group">
+                          <input name="name" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
+                        </div>
+                        <div class="form-group">
+                          <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-sm-6 mb-3 mb-sm-0">
+                            <input name="whatsapp" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="WhatsApp">
+                          </div>
+                          <div class="col-sm-6">
+                            <input name="instagram" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Instagram">
+                          </div>
+                        </div>
+                        <button class="btn btn-primary btn-user btn-block">
+                          Salvar
+                        </button>
+                      </form>
+
+                    </div>
+                  </div>
+                </div>             
+
             </div>
           </div>
         </div>
-
         <!-- /.container-fluid -->
 
       </div>

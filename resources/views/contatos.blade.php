@@ -225,11 +225,11 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{ route('profile') }}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{ route('config') }}">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
@@ -269,7 +269,7 @@
               <!-- bt criar contato -->
               <div class="row">
                 <div class="col-sm-12 col-md-6">
-                  <a href="#" class="btn btn-primary btn-icon-split">
+                  <a href="{{ route('addcontato') }}" class="btn btn-primary btn-icon-split">
                     <span class="text">Criar contato</span>
                   </a>
                 </div>

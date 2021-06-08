@@ -28,8 +28,21 @@ Route::get('/dashboard', function () {
 Route::get('/enviados', function () {
     return view('enviados');
 })->middleware(['auth'])->name('enviados');
+
 Route::get('/contatos', function () {
     return view('contatos');
 })->middleware(['auth'])->name('contatos');
+
+Route::get('/addcontato', function () {
+    return view('addcontato');
+})->middleware(['auth'])->name('addcontato');
+
+Route::get('/profile', function () {
+    return view('profile');
+})->middleware(['auth'])->name('profile');
+
+Route::get('/config', function () {
+    return view('config');
+})->middleware(['auth'])->name('config');
 
 require __DIR__.'/auth.php';
