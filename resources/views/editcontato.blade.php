@@ -256,61 +256,51 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Contatos</h1>
+          <h1 class="h3 mb-4 text-gray-800">Editar contato</h1>
 
           <!-- Card lista de contatos -->
           <div class="card shadow mb-4">
             <div class="border-left-primary  card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary ">Lista de contatos</h6>
+              <h6 class="m-0 font-weight-bold text-primary ">Editando contato</h6>
             </div>
-            @if (\Session::has('msg'))
-            <div class="alert alert-success">
-              <p>{{ Session::get('msg') }}</p>
-            </div>
-            @endif
-            <div class="card-body">
 
-              <!-- bt criar contato -->
-              <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <a href="{{ route('addcontato') }}" class="btn btn-primary btn-icon-split">
-                    <span class="text">Criar contato</span>
-                  </a>
-                </div>
-              </div>
-              <br>
-              <!-- tabela email -->
-              <div class="table-reponsive">
-                <table class="table">
-                  <thead>
-                    <tr role="row">
-                      <th style="width: 15px; text-align: center;"> # </th>
-                      <th style="width: 15px; text-align: center;"> # </th>
-                      <th id="maxwidth">Nome</th>
-                      <th>Email</th>
-                  </thead>
-                  </tr>
-                  @foreach ($contatos as $contato) <tr role="row">
-                    <form action="{{ route('delcontato', $contato->id) }}" method="post">
-                      @csrf
-                      @method('delete')
-                      <td style="width: 15px; text-align: center;">
-                        <button type="submit" class="btn btn-danger btn-circle btn-sm">
-                          <i class="fas fa-trash"></i>
+            <div class="card-body border-0 my-5">
+
+           
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="p-7">
+                      <div class="text-center">
+                        <h4 class="h5 text-gray-900 mb-6">Preencha os campos abaixo</h4>
+                      </div>
+
+                      <!-- Validation Errors -->
+                      <form method="POST" action="{{ route('updatecontato', $contato->id) }}" class="user">
+                        @csrf
+                        @method('PUT')
+                        <div class="form-group">
+                          <input name="nome" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome" value="{{ $contato->nome }}">
+                        </div>
+                        <div class="form-group">
+                          <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email" value="{{ $contato->email }}">
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-sm-6 mb-3 mb-sm-0">
+                            <input name="telefone" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="WhatsApp" value="{{ $contato->telefone }}">
+                          </div>
+                          <div class="col-sm-6">
+                            <input name="instagram" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Instagram" value="{{ $contato->instagram }}">
+                          </div>
+                        </div>
+                        <button type="subimit" class="btn btn-primary btn-user btn-block">
+                          Salvar
                         </button>
-                      </td>
-                      <td style="width: 15px; text-align: center;">
-                        <a href="{{ route('editcontato', $contato->id) }}" class="btn btn-info btn-circle btn-sm">
-                          <i class="fas fa-user-edit"></i>
-                        </a>
-                      </td>
-                    </form>
-                    <td id="maxwidth">{{ $contato->nome }}</td>
-                    <td>{{ $contato->email }}</td>
-                  </tr>
-                  @endforeach
-                </table>
-              </div>
+                      </form>
+
+                    </div>
+                  </div>
+                </div>             
+
             </div>
           </div>
         </div>

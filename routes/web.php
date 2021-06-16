@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\{ContatoController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,13 +30,25 @@ Route::get('/enviados', function () {
     return view('enviados');
 })->middleware(['auth'])->name('enviados');
 
-Route::get('/contatos', function () {
-    return view('contatos');
-})->middleware(['auth'])->name('contatos');
+// Route::get('/contatos', function () {
+//     return view('contatos');
+// })->middleware(['auth'])->name('contatos');
 
-Route::get('/addcontato', function () {
-    return view('addcontato');
-})->middleware(['auth'])->name('addcontato');
+Route::get('/contatos', [ContatoController::class, 'Contatos'])->middleware(['auth'])->name('contatos');
+
+Route::post('/addcontato', [ContatoController::class, 'CreatePost'])->middleware(['auth'])->name('CreatePost');
+
+Route::get('/addcontato', [ContatoController::class, 'create'])->middleware(['auth'])->name('addcontato');
+
+Route::delete('/contatos/{id}', [ContatoController::class, 'destroy'])->middleware(['auth'])->name('delcontato');
+
+Route::get('/contatos/{id}', [ContatoController::class, 'edit'])->middleware(['auth'])->name('editcontato');
+
+Route::put('/contatos/update/{id}', [ContatoController::class, 'update'])->middleware(['auth'])->name('updatecontato');
+
+// Route::get('/addcontato', function () {
+//     return view('addcontato');
+// })->middleware(['auth'])->name('addcontato');
 
 Route::get('/profile', function () {
     return view('profile');

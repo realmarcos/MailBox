@@ -275,23 +275,24 @@
                       </div>
 
                       <!-- Validation Errors -->
-                      <form method="POST" action="#" class="user">
+                      <form method="POST" action="{{ route('CreatePost') }}" class="user">
                         @csrf
+                      
                         <div class="form-group">
-                          <input name="name" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
+                          <input name="nome" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
                         </div>
                         <div class="form-group">
                           <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
                         </div>
                         <div class="form-group row">
                           <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input name="whatsapp" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="WhatsApp">
+                            <input name="telefone" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="WhatsApp">
                           </div>
                           <div class="col-sm-6">
                             <input name="instagram" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Instagram">
                           </div>
                         </div>
-                        <button class="btn btn-primary btn-user btn-block">
+                        <button type="subimit" class="btn btn-primary btn-user btn-block">
                           Salvar
                         </button>
                       </form>
