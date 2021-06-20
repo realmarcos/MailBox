@@ -25,86 +25,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">MailBox</div>
-      </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <li class="nav-item">
-        <div class="nav-link">
-          <a href="#" class="btn btn-danger btn-block"> Escrever </a>
-        </div>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Inbox/Dashboard -->
-      @if (Route::getCurrentRoute()->getName() === 'dashboard')
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ route('dashboard') }}
-        ">
-          <i class="fas fa-fw fa-inbox"></i>
-          <span>Inbox</span></a>
-      </li>
-      @else
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('dashboard') }}">
-          <i class="fas fa-fw fa-inbox"></i>
-          <span>Inbox</span></a>
-      </li>
-      @endif
-
-      <!-- Nav Item - Enviados -->
-      @if (Route::getCurrentRoute()->getName() === 'enviados')
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ route('enviados') }}
-        ">
-          <i class="fas fa-fw fa-inbox"></i>
-          <span>Enviados</span></a>
-      </li>
-      @else
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('enviados') }}">
-          <i class="fas fa-fw fa-inbox"></i>
-          <span>Enviados</span></a>
-      </li>
-      @endif
-
-      <!-- Nav Item - Contatos -->
-      @if (Route::getCurrentRoute()->getName() === 'contatos')
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ route('contatos') }}
-        ">
-          <i class="fas fa-fw fa-inbox"></i>
-          <span>Contatos</span></a>
-      </li>
-      @else
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('contatos') }}">
-          <i class="fas fa-fw fa-inbox"></i>
-          <span>Contatos</span></a>
-      </li>
-      @endif
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-
-    </ul>
-    <!-- End of Sidebar -->
+    @include('layouts.menu')
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -257,7 +178,57 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Configurações</h1>
-          
+
+          <div class="card shadow mb-4">
+            <div class="border-left-primary  card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary ">Confiurações do serviço de email</h6>
+            </div>
+
+            <div class="card-body border-0 my-5">
+
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="p-7">
+                    <div class="text-center">
+                      <h4 class="h5 text-gray-900 mb-6">Preencha os campos abaixo</h4>
+                    </div>
+
+                    <!-- Validation Errors -->
+                    <form method="POST" action="#" class="user">
+                      <!-- @csrf -->
+                      
+                      
+                      <div class="form-group">
+                      <label for="Email">Email:</label>
+                        <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email" value="#">
+                      </div>
+                      <div class="form-group">
+                      <label for="password">Senha:</label>
+                        <input name="nome" type="password" class="form-control form-control-user" id="exampleFirstName" placeholder="Host" value="#">
+                      </div>
+                      <div class="form-group row">                      
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                        <label for="host">Host:</label>
+                          <input name="host" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Host" value="#">
+                        </div>
+                        <div class="col-sm-6">
+                        <label for="porta">Porta:</label>
+                          <input name="porta" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Porta" value="#">
+                        </div>
+                      </div>
+                      <button type="subimit" class="btn btn-primary btn-user btn-block">
+                        Salvar
+                      </button>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
         <!-- /.container-fluid -->
 
@@ -285,7 +256,7 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-
+  @extends('layouts.ModalEmail')
   <!-- Bootstrap core JavaScript-->
   <script src="{{ asset('assets/sb-admin-2/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('assets/sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

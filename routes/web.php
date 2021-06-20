@@ -58,4 +58,4 @@ Route::get('/config', function () {
     return view('config');
 })->middleware(['auth'])->name('config');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
