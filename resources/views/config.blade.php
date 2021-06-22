@@ -207,7 +207,7 @@
                       </div>
                       <div class="form-group">
                         <label for="password">Senha:</label>
-                        <input name="password" type="password" class="form-control form-control-user" id="exampleFirstName" placeholder="Senha" value="{{ $setting->password }}">
+                        <input name="password" type="password" class="form-control form-control-user" id="exampleFirstName" placeholder="Senha" value="{{  $setting->password }}">
                       </div>
                       <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
