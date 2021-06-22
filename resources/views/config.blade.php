@@ -177,7 +177,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Configuraçõe</h1>
+          <h1 class="h3 mb-4 text-gray-800">Configurações</h1>
 
           <div class="card shadow mb-4">
             <div class="border-left-primary  card-header py-3">
@@ -185,7 +185,11 @@
             </div>
 
             <div class="card-body border-0 my-5">
-
+              @if (\Session::has('msg'))
+              <div class="alert alert-success">
+                <p>{{ Session::get('msg') }}</p>
+              </div>
+              @endif
 
               <div class="row">
                 <div class="col-lg-6">
@@ -195,26 +199,24 @@
                     </div>
 
                     <!-- Validation Errors -->
-                    <form method="POST" action="#" class="user">
-                      <!-- @csrf -->
-                      
-                      
+                    <form method="POST" action="{{ route('configPost') }}" class="user">
+                      @csrf
                       <div class="form-group">
-                      <label for="Email">Email:</label>
-                        <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email" value="#">
+                        <label for="Email">Email:</label>
+                        <input name="email" type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email" value="{{ $setting->email }}">
                       </div>
                       <div class="form-group">
-                      <label for="password">Senha:</label>
-                        <input name="nome" type="password" class="form-control form-control-user" id="exampleFirstName" placeholder="Host" value="#">
+                        <label for="password">Senha:</label>
+                        <input name="password" type="password" class="form-control form-control-user" id="exampleFirstName" placeholder="Senha" value="{{ $setting->password }}">
                       </div>
-                      <div class="form-group row">                      
+                      <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                        <label for="host">Host:</label>
-                          <input name="host" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Host" value="#">
+                          <label for="host">Host:</label>
+                          <input name="host" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Host" value="{{ $setting->host }}">
                         </div>
                         <div class="col-sm-6">
-                        <label for="porta">Porta:</label>
-                          <input name="porta" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Porta" value="#">
+                          <label for="porta">Porta:</label>
+                          <input name="porta" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Porta" value="{{ $setting->porta }}">
                         </div>
                       </div>
                       <button type="subimit" class="btn btn-primary btn-user btn-block">

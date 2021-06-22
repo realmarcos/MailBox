@@ -56,12 +56,13 @@
                   Registrar conta
                 </button>
                 <hr>
-                <a href="index.html" class="btn btn-google btn-user btn-block">
+                  <!-- Registro com conta google ou facebook  -->
+                <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Criar conta usando o Google
                 </a>
                 <a href="index.html" class="btn btn-facebook btn-user btn-block">
                   <i class="fab fa-facebook-f fa-fw"></i> Criar conta usando o Facebook
-                </a>
+                </a> -->
               </form>
               <hr>
               <div class="text-center">

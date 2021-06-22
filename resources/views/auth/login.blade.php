@@ -62,12 +62,13 @@
                     </button>
                     
                     <hr>
-                    <a href="#" class="btn btn-google btn-user btn-block">
+                    <!-- Login com conta google ou facebook  -->
+                    <!-- <a href="#" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Logar com uma conta Google
                     </a>
                     <a href="#" class="btn btn-facebook btn-user btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Logar com uma conta Facebook
-                    </a>
+                    </a> -->
                   </form>
                   <hr>
                   <div class="text-center">

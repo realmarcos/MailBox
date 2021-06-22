@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{ContatoController};
+use App\Http\Controllers\{ContatoController, EmailSettingController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +34,7 @@ Route::get('/enviados', function () {
 //     return view('contatos');
 // })->middleware(['auth'])->name('contatos');
 
+// Contatos 
 Route::get('/contatos', [ContatoController::class, 'Contatos'])->middleware(['auth'])->name('contatos');
 
 Route::post('/addcontato', [ContatoController::class, 'CreatePost'])->middleware(['auth'])->name('CreatePost');
@@ -46,16 +47,18 @@ Route::get('/contatos/{id}', [ContatoController::class, 'edit'])->middleware(['a
 
 Route::put('/contatos/update/{id}', [ContatoController::class, 'update'])->middleware(['auth'])->name('updatecontato');
 
-// Route::get('/addcontato', function () {
-//     return view('addcontato');
-// })->middleware(['auth'])->name('addcontato');
+// Email settings 
+Route::get('/settings', [EmailSettingController::class, 'Create'])->middleware(['auth'])->name('config');
+Route::post('/settings', [EmailSettingController::class, 'CreatePost'])->middleware(['auth'])->name('configPost');
+// Route::get('/settings', function () {
+//     return view('config');
+// })->middleware(['auth'])->name('config');
+
 
 Route::get('/profile', function () {
     return view('profile');
 })->middleware(['auth'])->name('profile');
 
-Route::get('/config', function () {
-    return view('config');
-})->middleware(['auth'])->name('config');
+
 
 require __DIR__ . '/auth.php';
