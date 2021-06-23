@@ -24,7 +24,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-   @include('layouts.menu')
+    @include('layouts.menu')
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -193,13 +193,29 @@
                       <th id="maxwidth">Rementente</th>
                       <th>Mensagem</th>
                     </tr>
+                    </thead>
+                    <?php
+                    /* Ler um e-mail */
+                    //Conecta-se ao MailServer
+                    $host = "imap.hostinger.com";
+                    $usuario = "mailbox@realmarcos.com";
+                    $senha = "Mailbox.realmarcos123";
+                    //recebe a conexao
+                    $mbox = imap_open("{" . $host . ":143/novalidate-cert}INBOX", $usuario, $senha) or die("can't connect: " . imap_last_error());
 
+                    for ($i = 1; $i <= imap_num_msg($mbox); $i++) {
+                      $header = imap_headerinfo($mbox, $i);
+                      $msg = imap_fetchbody($mbox, $i, 1);
+                    
+                    ?>
+                    <tr>
                     <td>
                       <input type="checkbox">
                     </td>
-                    <td id="maxwidth">Marcos</td>
-                    <td>Está é uma mensagem teste</td>
-                  </thead>
+                    <td id="maxwidth">{{ $header->fromaddress }}</td>
+                    <td style="max-width: 500px; white-space: nowrap; text-overflow: ellipsis;overflow: hidden;">{{ utf8_encode(quoted_printable_decode($msg)) }}</td>
+                    <?php } ?>
+                  </tr>
 
                 </table>
               </div>

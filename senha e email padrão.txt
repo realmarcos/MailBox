@@ -1,2 +1,4 @@
 mailbox@realmarcos.com
 Mailbox.realmarcos123
+imap.hostinger.com
+993
