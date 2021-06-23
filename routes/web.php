@@ -49,9 +49,9 @@ Route::get('/contatos/{id}', [ContatoController::class, 'edit'])->middleware(['a
 Route::put('/contatos/update/{id}', [ContatoController::class, 'update'])->middleware(['auth'])->name('updatecontato');
 
 // Email settings 
-Route::get('/settings', [EmailSettingController::class, 'Create'])->middleware(['auth'])->name('config');
+Route::get('/settings', [EmailSettingController::class, 'index'])->middleware(['auth'])->name('config');
 Route::post('/settings', [EmailSettingController::class, 'CreatePost'])->middleware(['auth'])->name('configPost');
-Route::post('/testerota', [EmailSettingController::class, 'teste'])->middleware(['auth'])->name('testerota');
+// Route::post('/testerota', [EmailSettingController::class, 'teste'])->middleware(['auth'])->name('testerota');
 // Route::get('/settings', function () {
 //     return view('config');
 // })->middleware(['auth'])->name('config');
