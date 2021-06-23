@@ -14,6 +14,9 @@ class EmailSettingController extends Controller
         $setting = EmailSetting::findOrFail(1);
         return view('config', ['setting' => $setting]);
     }
+    public function teste() {
+        return view('testerota');
+    }
 
     public function CreatePost(Request $request)
     {
