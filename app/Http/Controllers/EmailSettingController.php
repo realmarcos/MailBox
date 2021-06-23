@@ -8,14 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class EmailSettingController extends Controller
 {
-    public function index()
+    public function Create()
     {
-        // $contatos = Contato::get();
         $setting = EmailSetting::findOrFail(1);
         return view('config', ['setting' => $setting]);
-    }
-    public function teste() {
-        return view('testerota');
     }
 
     public function CreatePost(Request $request)
