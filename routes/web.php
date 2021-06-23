@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\{ContatoController, EmailSettingController};
+use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\EmailSettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
