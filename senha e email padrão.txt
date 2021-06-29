@@ -2,3 +2,14 @@ mailbox@realmarcos.com
 Mailbox.realmarcos123
 imap.hostinger.com
 993
+
+Config .env 
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.hostinger.com
+MAIL_PORT=465
+MAIL_USERNAME=mailbox@realmarcos.com
+MAIL_PASSWORD=Mailbox.realmarcos123
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=mailbox@realmarcos.com
+MAIL_FROM_NAME="${APP_NAME}"
