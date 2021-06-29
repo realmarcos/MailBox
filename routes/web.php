@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\EmailSettingController;
+use App\Http\Controllers\EmailsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,13 +20,13 @@ Route::get('/teste', function () {
     return view('auth/login2');
 });
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 Route::get('/enviados', function () {
     return view('enviados');
@@ -54,6 +55,11 @@ Route::post('/settings', [EmailSettingController::class, 'CreatePost'])->middlew
 // Route::get('/settings', function () {
 //     return view('config');
 // })->middleware(['auth'])->name('config');
+
+// Emails - Inbox, enviados 
+Route::get('/dashboard', [EmailsController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/', [EmailsController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/sendemail', [EmailsController::class, 'SendEmail'])->middleware(['auth'])->name('SendEmail');
 
 
 Route::get('/profile', function () {

@@ -182,6 +182,7 @@
           <div class="card shadow mb-4">
             <div class="border-left-primary  card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary ">Confiurações do serviço de email</h6>
+              <p>Apenas para imap com criptografia ssl</p>
             </div>
 
             <div class="card-body border-0 my-5">
