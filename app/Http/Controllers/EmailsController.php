@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{EmailSetting, Emails};
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Email;
+use stdClass;
 
 class EmailsController extends Controller
 {
@@ -46,14 +49,13 @@ class EmailsController extends Controller
     return view('dashboard', compact('emails'));
   }
 
-  public function SendEmail()
+  public function SendEmail(Request $request)
   {
-    //   $to = "realmarcos.raimundo@outlook.com";
-    //   $subject = "My subject";
-    //   $txt = "Hello world!";
-    //   $headers = "From: realmarcos.raimundo@outlook.com" . "\r\n" .
-    //     "CC: realmarcos.raimundo@gmail.com.com";
-
-    //  return mail($to, $subject, $txt, $headers);
+    $email = new stdClass();
+    $email->assunto = $request->assunto;
+    $email->email = $request->email;
+    $email->mensagem = $request->mensagem;
+    Mail::send(new Email($email));
+    return redirect()->route('dashboard')->with('msg', 'Email enviado com sucesso!');
   }
 }

@@ -184,6 +184,11 @@
               <h6 class="m-0 font-weight-bold text-primary ">Caixa de entrada</h6>
             </div>
             <div class="card-body">
+            @if (\Session::has('msg'))
+            <div class="alert alert-success">
+              <p>{{ Session::get('msg') }}</p>
+            </div>
+            @endif
               <!-- tabela email -->
               <div class="table-reponsive">
                 <table class="table table-bordered dataTable">

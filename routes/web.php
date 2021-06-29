@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\EmailSettingController;
 use App\Http\Controllers\EmailsController;
+// use App\Mail\Email;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,8 +60,15 @@ Route::post('/settings', [EmailSettingController::class, 'CreatePost'])->middlew
 // Emails - Inbox, enviados 
 Route::get('/dashboard', [EmailsController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/', [EmailsController::class, 'index'])->middleware(['auth'])->name('dashboard');
-Route::get('/sendemail', [EmailsController::class, 'SendEmail'])->middleware(['auth'])->name('SendEmail');
+Route::get('/sendemail', [EmailsController::class, 'SendEmail'])->middleware(['auth'])->name('sendemail');
 
+// Route::get('/dashboard', function () {
+//  \Illuminate\Support\Facades\Mail::send(new \App\Mail\Email);
+//  })->name('sendemail');  
+
+// Route::get('/sendemail', function () {
+//     return view('sendemail');
+// })->middleware(['auth'])->name('sendemail');
 
 Route::get('/profile', function () {
     return view('profile');
